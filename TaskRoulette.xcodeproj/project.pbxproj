@@ -13,6 +13,8 @@
 		27D626312818F8CE006E2AA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D6262F2818F8CE006E2AA9 /* Main.storyboard */; };
 		27D626332818F8D0006E2AA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D626322818F8D0006E2AA9 /* Assets.xcassets */; };
 		27D626362818F8D0006E2AA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D626342818F8D0006E2AA9 /* LaunchScreen.storyboard */; };
+		27D6263E281B035D006E2AA9 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D6263D281B035D006E2AA9 /* TodoModel.swift */; };
+		27D62640281B4052006E2AA9 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D6263F281B4052006E2AA9 /* ModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		27D626322818F8D0006E2AA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27D626352818F8D0006E2AA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27D626372818F8D0006E2AA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27D6263D281B035D006E2AA9 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		27D6263F281B4052006E2AA9 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				27D626322818F8D0006E2AA9 /* Assets.xcassets */,
 				27D626342818F8D0006E2AA9 /* LaunchScreen.storyboard */,
 				27D626372818F8D0006E2AA9 /* Info.plist */,
+				27D6263D281B035D006E2AA9 /* TodoModel.swift */,
+				27D6263F281B4052006E2AA9 /* ModalViewController.swift */,
 			);
 			path = TaskRoulette;
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				27D6262E2818F8CE006E2AA9 /* ViewController.swift in Sources */,
+				27D62640281B4052006E2AA9 /* ModalViewController.swift in Sources */,
+				27D6263E281B035D006E2AA9 /* TodoModel.swift in Sources */,
 				27D6262A2818F8CE006E2AA9 /* AppDelegate.swift in Sources */,
 				27D6262C2818F8CE006E2AA9 /* SceneDelegate.swift in Sources */,
 			);
@@ -304,7 +312,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -332,7 +340,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
