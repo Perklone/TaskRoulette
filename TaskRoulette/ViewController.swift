@@ -199,6 +199,7 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
                 index += 1
             }
             lists.remove(at: index)
+            
             taskLabel.text = "-"
             prioLabel.text = "-"
             tableView.reloadData()
