@@ -115,7 +115,7 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
         view.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
   
         setup()
-        
+        loadTodo()
         
         // Do any additional setup after loading the view.
     }
@@ -174,6 +174,7 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
     func addItemViewController(_ controller: ModalViewController, didFinishAdding item: TodoModel) {
         lists.append(item)
         tableView.reloadData()
+        saveTodo()
 //        dismiss(animated: true)
     }
     @objc func rollTask(_ sender:UIButton){
@@ -251,5 +252,41 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
+    }
+    func documentsDirectory() -> URL {
+      let paths = FileManager.default.urls(
+        for: .documentDirectory,
+           in: .userDomainMask)
+      return paths[0]
+    }
+
+    func dataFilePath() -> URL {
+      return documentsDirectory().appendingPathComponent("Checklists.plist")
+    }
+
+    func saveTodo() {
+      let encoder = PropertyListEncoder()
+      do {
+        let data = try encoder.encode(lists)
+        try data.write(
+          to: dataFilePath(),
+          options: Data.WritingOptions.atomic)
+      } catch {
+        print("Error encoding item array: \(error.localizedDescription)")
+      }
+    }
+
+    func loadTodo() {
+      let path = dataFilePath()
+      if let data = try? Data(contentsOf: path) {
+        let decoder = PropertyListDecoder()
+        do {
+          lists = try decoder.decode(
+            [TodoModel].self,
+            from: data)
+        } catch {
+          print("Error decoding item array: \(error.localizedDescription)")
+        }
+      }
     }
 }

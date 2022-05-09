@@ -33,6 +33,7 @@ class ModalViewController: UIViewController {
         x.translatesAutoresizingMaskIntoConstraints = false
         x.textAlignment = .center
         x.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        x.autocorrectionType = .no
         return x
     }()
     let prioTextField: UITextField = {
@@ -41,6 +42,8 @@ class ModalViewController: UIViewController {
         x.translatesAutoresizingMaskIntoConstraints = false
         x.textAlignment = .center
         x.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        x.autocorrectionType = .no
+        
         return x
     }()
     let addButton: UIButton = {
@@ -56,9 +59,13 @@ class ModalViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupView()
+        createDismissKeyboardTapGesture()
         // Do any additional setup after loading the view.
     }
-    
+    func createDismissKeyboardTapGesture(){
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
+    }
     func setupView(){
         view.addSubview(cancelButton)
         view.addSubview(addButton)

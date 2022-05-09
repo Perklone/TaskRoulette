@@ -8,7 +8,7 @@
 import Foundation
 
 
-class TodoModel {
+class TodoModel: NSObject, Codable {
     var text = ""
     var priority = ""
 }
